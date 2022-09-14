@@ -8,7 +8,7 @@
     font-size: 3rem;
     width: 3rem;
     aspect-ratio: 1/1;
-    padding: 2rem;
+    padding: 3rem;
     margin: 3rem auto 1rem;
     border: 3px solid aliceblue;
     border-radius: 50%;
@@ -26,9 +26,18 @@
     font-size: 2rem;
     width: 2rem;
     aspect-ratio: 1/1;
+    padding: 2rem;
     border: 3px solid aliceblue;
     border-radius: 50%;
-    padding: 1rem;
     color: aliceblue;
     text-align: center;
+    
+}
+
+.add {
+    background-color: rgb(163 230 53);
+}
+
+.subtract {
+    background-color: rgb(220 38 38);
 }
