@@ -1,0 +1,34 @@
+.counterBox {
+    width: 80%;
+    margin: 0 auto;
+    border: 3px solid yellowgreen;
+}
+
+.countResult {
+    font-size: 3rem;
+    width: 3rem;
+    aspect-ratio: 1/1;
+    padding: 2rem;
+    margin: 3rem auto 1rem;
+    border: 3px solid aliceblue;
+    border-radius: 50%;
+    color: aliceblue;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.control {
+    font-size: 2rem;
+    width: 2rem;
+    aspect-ratio: 1/1;
+    border: 3px solid aliceblue;
+    border-radius: 50%;
+    padding: 1rem;
+    color: aliceblue;
+    text-align: center;
+}
