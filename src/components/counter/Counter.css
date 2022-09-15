@@ -1,16 +1,18 @@
-* {
-    box-sizing: content-box;
-}
-
 .counterTitle {
     font-size: 2rem;
     color: aliceblue;
     text-align: center;
 }
 
+.countResult, .control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .countResult {
     font-size: 3rem;
-    width: 3rem;
+    width: 9rem;
     aspect-ratio: 1/1;
     padding: 3rem;
     margin: 3rem auto 1rem;
@@ -28,7 +30,7 @@
 
 .control {
     font-size: 2rem;
-    width: 2rem;
+    width: 6rem;
     aspect-ratio: 1/1;
     padding: 2rem;
     border: 3px solid aliceblue;

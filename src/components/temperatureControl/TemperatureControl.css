@@ -1,0 +1,35 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+.temperatureController {
+    width: 350px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgb(38 38 38);
+    box-shadow: rgb(1 1 1 / 95%) 0px 5px 15px;
+    padding-top: 1rem;
+}
+
+.temperatureScreen {
+    width: 80%;
+    padding: 1rem 1rem;
+    margin: 1rem auto 0;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.temperature {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.cold {
+    background-color: rgb(34 211 238);;
+}
+
+.hot {
+    background-color: rgb(245 158 11);
+}

@@ -2,7 +2,7 @@ import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Dashboard from './components/dashboardApps/Dashboard';
 import Counter from './components/counter/Counter';
-import TemperatureControl from './components/temparatureControl/TemparatureControl';
+import TemperatureControl from './components/temperatureControl/TemperatureControl';
 
 function App() {
   return (
