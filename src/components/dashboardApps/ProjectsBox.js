@@ -12,6 +12,11 @@ function ProjectsBox() {
                         <img src={counterApp} alt="Counter App" className='appImg'/>
                     </article>
                 </Link>
+                <Link to="temperature-control">
+                    <article className='appContainer'>
+                        <p className='appTitle'>Temperature Control</p>
+                    </article>
+                </Link>
             </section>
         </>
     );

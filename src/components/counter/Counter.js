@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BackButton from '../BackButton';
 import './Counter.css';
 
 function Counter() {
@@ -14,6 +15,7 @@ function Counter() {
 
     return (
         <>
+        <BackButton/>
         <h2 className='counterTitle'>Counter App</h2>
         <section className='counterBox'>
             <h3 className="countResult">{countResult}</h3>
