@@ -24,12 +24,38 @@
 .temperature {
     font-size: 2rem;
     font-weight: 400;
+    justify-content: center;
+}
+
+.temperatureControls {
+    width: 80%;
+    margin: 35% auto;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.controlTemperature {
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 35%;
+    text-align: center;
+    font-size: 1.2rem;
+
 }
 
 .cold {
-    background-color: rgb(34 211 238);;
+    background-color: rgb(34 211 238);
 }
 
 .hot {
     background-color: rgb(245 158 11);
+}
+
+.pressed {
+    background-color: greenyellow;
+    color: aliceblue;
+    font-size: 1.2rem;
+    font-weight: 700;
 }

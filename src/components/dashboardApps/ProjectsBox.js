@@ -1,6 +1,7 @@
 import './Dashboard.css';
 import { Link } from 'react-router-dom';
 import counterApp from './img/counter-app.png';
+import temperatureControlApp from './img/temperature-control.png';
 
 function ProjectsBox() {
     return (
@@ -14,7 +15,8 @@ function ProjectsBox() {
                 </Link>
                 <Link to="temperature-control">
                     <article className='appContainer'>
-                        <p className='appTitle'>Temperature Control</p>
+                        <p className='appTitle'>Temperature Control App</p>
+                        <img src={temperatureControlApp} alt="Temperature Control App" className='appImg'/>
                     </article>
                 </Link>
             </section>

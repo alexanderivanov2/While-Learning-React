@@ -1,4 +1,6 @@
 function TemperatureScreen({temperature}) {
+
+
     return (
         <>
             <div className={ temperature < 20 ? "cold temperatureScreen" : "hot temperatureScreen"}>
