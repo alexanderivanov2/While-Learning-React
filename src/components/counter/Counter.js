@@ -17,8 +17,8 @@ function Counter() {
         <section className='counterBox'>
             <h3 className="countResult">{countResult}</h3>
             <article className='controls'>
-                <div className="add control" onClick={countResultAddition}>+</div>
-                <div className="subtract control" onClick={countResultSubtraction}>-</div>
+                <div className="add control noSelect" onClick={countResultAddition}>+</div>
+                <div className="subtract control noSelect" onClick={countResultSubtraction}>-</div>
             </article>
         </section>
         </>
