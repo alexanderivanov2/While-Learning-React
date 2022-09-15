@@ -1,7 +1,11 @@
-.counterBox {
-    width: 80%;
-    margin: 0 auto;
-    border: 3px solid yellowgreen;
+* {
+    box-sizing: content-box;
+}
+
+.counterTitle {
+    font-size: 2rem;
+    color: aliceblue;
+    text-align: center;
 }
 
 .countResult {
@@ -34,6 +38,19 @@
     cursor: pointer;
 }
 
+.add {
+    background-color: rgb(163 230 53);
+}
+
+.subtract {
+    background-color: rgb(220 38 38);
+}
+
+.disabledSubtract {
+    background-color: rgb(203 213 225);
+    cursor: not-allowed;
+}
+
 .noSelect {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -43,14 +60,7 @@
     -ms-user-select: none;
     user-select: none;
 }
+
 .noSelect:focus {
     outline: none !important;
-}
-
-.add {
-    background-color: rgb(163 230 53);
-}
-
-.subtract {
-    background-color: rgb(220 38 38);
 }

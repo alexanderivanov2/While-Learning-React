@@ -14,11 +14,12 @@ function Counter() {
 
     return (
         <>
+        <h2 className='counterTitle'>Counter App</h2>
         <section className='counterBox'>
             <h3 className="countResult">{countResult}</h3>
             <article className='controls'>
                 <div className="add control noSelect" onClick={countResultAddition}>+</div>
-                <div className="subtract control noSelect" onClick={countResultSubtraction}>-</div>
+                <div className={countResult <= 0 ? "disabledSubtract subtract control noSelect" : "subtract control noSelect"} onClick={countResultSubtraction}>-</div>
             </article>
         </section>
         </>
