@@ -1,12 +1,12 @@
 import React from 'react';
-import './Dashboard.css';
+import styles from './Dashboard.module.css';
 import ProjectsBox from './ProjectsBox';
 
 
 function Dashboard() {
     return(
         <>
-            <h2 className='dashboardTitle'>Dashboard For Apps</h2>
+            <h2 className={styles.dashboardTitle}>Dashboard For Apps</h2>
             <ProjectsBox/>
         </>
     );

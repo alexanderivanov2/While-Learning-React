@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+
+.temperatureTitle {
+    font-size: 2rem;
+    color: aliceblue;
+    text-align: center;
+}
 .temperatureController {
     width: 350px;
     height: 500px;
@@ -53,9 +59,10 @@
     background-color: rgb(245 158 11);
 }
 
-.pressed {
+.pressedUp {
     background-color: greenyellow;
-    color: aliceblue;
-    font-size: 1.2rem;
-    font-weight: 700;
+}
+
+.pressedDown {
+    background-color: red;
 }

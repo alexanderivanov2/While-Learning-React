@@ -3,7 +3,7 @@
 }
 
 .dashboardTitle {
-    color: aliceblue;
+    color: #F2F2F2;
     font-size: 2.5rem;
     font-weight: 600;
     text-align: center;
@@ -20,6 +20,7 @@
 
 a {
     text-decoration: none;
+    color:#F2F2F2;
 }
 
 .appContainer {
@@ -50,6 +51,6 @@ a {
     top: 0;
     right: 0;
     padding: 1.2rem;
-    background-color: antiquewhite;
+    background-color: #F2F2F2;
     border-bottom-left-radius: 5px;
 }

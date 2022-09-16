@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+import styles from './dashboardApps/Dashboard.module.css';
 
 function BackButton() {
     return (
         <>
-        <Link to="/" className='backBtn'>Back To Dashboard</Link>
+        <Link to="/" className={styles.backBtn}>Back To Dashboard</Link>
         </>
     );
 }

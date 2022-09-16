@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import BackButton from "../BackButton";
-import './TemperatureControl.css';
+import styles from './TemperatureControl.module.css';
 import TemperatureScreen from './TemperatureScreen';
 
 function TemperatureControl() {
@@ -8,30 +8,32 @@ function TemperatureControl() {
     const MIN_TEMPERATURE = 15;
     const MAX_TEMPERATURE = 30;
 
-    const pressedButtonEffect = (e) => {
-        e.target.classList.add('pressed');
-        setTimeout(() => e.target.classList.remove('pressed'), 200);
+    const pressedButtonEffect = (e, pressedType) => {
+        e.target.classList.add(styles[pressedType]);
+        setTimeout(() => e.target.classList.remove(styles[pressedType]), 300);
     }
 
     const increaseTemperature = (e) => {
-        pressedButtonEffect(e);
+        pressedButtonEffect(e, 'pressedUp');
         setTemperature(state => state + 1 >= MAX_TEMPERATURE ? MAX_TEMPERATURE : state + 1);
     }
 
     const decreaseTemperature = (e) => {
-        pressedButtonEffect(e);
+        pressedButtonEffect(e, 'pressedDown');
         setTemperature(state => state - 1 <= MIN_TEMPERATURE ? MIN_TEMPERATURE : state - 1);
     }
+
+    const temperatureControllerStyle = `${styles.controlTemperature}`;
 
     return (
         <>
             <BackButton/>
-            <h2 className="counterTitle">Temperature Control App</h2>
-            <section className="temperatureController">
+            <h2 className={styles.temperatureTitle}>Temperature Control App</h2>
+            <section className={styles.temperatureController}>
                 <TemperatureScreen temperature={temperature}/>
-                <div className="temperatureControls">
-                <div className="controlTemperature up noSelect" onClick={increaseTemperature}>+</div>
-                <div className="controlTemperature down noSelect" onClick={decreaseTemperature}>&minus;</div>
+                <div className={styles.temperatureControls}>
+                <div className={`${temperatureControllerStyle} ${styles.up} noSelect`} onClick={increaseTemperature}>+</div>
+                <div className={`${temperatureControllerStyle} ${styles.down} noSelect`} onClick={decreaseTemperature}>&minus;</div>
             </div>
             </section>
         </>
