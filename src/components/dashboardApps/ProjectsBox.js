@@ -19,6 +19,11 @@ function ProjectsBox() {
                         <img src={temperatureControlApp} alt="Temperature Control App" className={styles.appImg}/>
                     </article>
                 </Link>
+                <Link to="countries-search-filter">
+                    <article className={styles.appContainer}>
+                        <p className={styles.appTitle}>Countries Search Filter</p>
+                    </article>
+                </Link>
             </section>
         </>
     );
