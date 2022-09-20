@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import useFetch from '../../hooks/useFetch';
+import BackButton from '../BackButton';
 import styles from './CountriesSearchFilter.module.css';
 
 const url = 'https://restcountries.com/v3.1/all';
@@ -46,6 +47,7 @@ function CountriesSearchFilter() {
 
     return (
         <>
+            <BackButton/>
             <section className={styles.countriesSearchFilter}>
                 <h1 className={styles.title}>Countries Search Filter</h1>
                 <form className={styles.searchForm}>
