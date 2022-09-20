@@ -1,17 +1,51 @@
-*, ::before, ::after {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-.countriesSearchFilter {
-    border: 3px solid salmon;
-    color: magenta;
+
+.title {
+    font-size: 2rem;
+    color: aliceblue;
+    text-align: center;
 }
 
+.titleResults {
+    width: 150px;
+    background-color: aliceblue;
+    color: #101820FF;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.searchForm {
+    background-color: #006B38FF;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    padding: 1rem 2rem 2rem;
+    border-radius: 10px;
+}
+
+.searchForm label {
+    color:#101820FF;
+    font-size: 1.5rem;
+}
+
+.searchForm input {
+    background-color: #101820FF;
+    color: #006B38FF;
+    font-size: 1.5rem;
+    margin: auto;
+}
+ 
 .countriesList {
     width: 250px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 0;
     list-style-type: none;
+
 }
 
 .countryListItem {
@@ -19,6 +53,8 @@
     padding: 1rem;
     border: 2px solid grey;
     font-weight: 700;
+    -webkit-box-shadow: -2px 0px 15px 2px #ffffff, 10px 0px 13px -7px #ffffff, 5px -5px 10px 5px rgb(255 255 255 / 0%); 
+    box-shadow: -2px 0px 15px 2px #ffffff, 10px 0px 13px -7px #ffffff, 5px -5px 10px 5px rgb(255 255 255 / 0%);
 }
 
 .countryListItem:nth-child(odd) {
@@ -35,4 +71,8 @@
     transform: skew(340deg);
     background-color: #101820FF;
     color: 	#006B38FF;
+}
+
+.match {
+    background-color: aliceblue;
 }
