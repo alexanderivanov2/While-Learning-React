@@ -1,0 +1,38 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+.countriesSearchFilter {
+    border: 3px solid salmon;
+    color: magenta;
+}
+
+.countriesList {
+    width: 250px;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+.countryListItem {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid grey;
+    font-weight: 700;
+}
+
+.countryListItem:nth-child(odd) {
+    width: 250px;
+    height: 70px;
+    transform: skew(20deg);
+    background-color: #006B38FF;
+    color: #101820FF;
+}
+
+.countryListItem:nth-child(even) {
+    width: 250px;
+    height: 70px;
+    transform: skew(340deg);
+    background-color: #101820FF;
+    color: 	#006B38FF;
+}
