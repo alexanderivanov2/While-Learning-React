@@ -56,7 +56,7 @@ function CountriesSearchFilter() {
                     <label htmlFor="countriesSearchInput">Search: </label>
                     <input type="text" placeholder="Country name..."className={styles.countriesSearchInput} onChange={onChangeInputSearchForCountries} value={inputSearch}/>
                 </form>
-                <h3 className={styles.titleResults}>Results:</h3>
+                {inputSearch && <h3 className={styles.titleResults}>Results</h3>}
                 <ul className={styles.countriesList}>
                     {inputSearch && foundCountries.length > 0
                         ?         
