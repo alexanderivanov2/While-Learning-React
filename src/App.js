@@ -4,6 +4,7 @@ import Dashboard from './components/dashboardApps/Dashboard';
 import Counter from './components/counter/Counter';
 import TemperatureControl from './components/temperatureControl/TemperatureControl';
 import CountriesSearchFilter from './components/countriesSearchFilter/CountriesSearchFilter';
+import BasicRegistrationForm from './components/basicRegistrationForm/BasicRegistrationForm';
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
           <Route path='/' element={<Dashboard/>}/>
           <Route path='/counter' element={<Counter/>}/>
           <Route path='/temperature-control' element={<TemperatureControl/>}/>
-          <Route path='/countries-search-filter' element={<CountriesSearchFilter/>} />
+          <Route path='/countries-search-filter' element={<CountriesSearchFilter/>}/>
+          <Route path='/basic-registration-form' element={<BasicRegistrationForm/>}/>
         </Routes>
       </BrowserRouter>
     </div>

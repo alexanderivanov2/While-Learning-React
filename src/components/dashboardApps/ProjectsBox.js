@@ -23,7 +23,13 @@ function ProjectsBox() {
                 <Link to="countries-search-filter">
                     <article className={styles.appContainer}>
                         <p className={styles.appTitle}>Countries Search Filter</p>
-                        <img src={countriesSearchFilter} alt="countries-search-filter" className={styles.appImg}/>
+                        <img src={countriesSearchFilter} alt="Countries Search Filter" className={styles.appImg}/>
+                    </article>
+                </Link>
+                <Link to="basic-registration-form">
+                    <article className={styles.appContainer}>
+                        <p className={styles.appTitle}>Basic Registration Form</p>
+                        <img src={countriesSearchFilter} alt="Basic Registration Form" className={styles.appImg}/>
                     </article>
                 </Link>
             </section>
