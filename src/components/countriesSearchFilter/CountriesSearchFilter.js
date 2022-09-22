@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
 import BackButton from '../BackButton';
 import styles from './CountriesSearchFilter.module.css';
+import CountryListItem from './CountryListItem';
 
 const url = 'https://restcountries.com/v3.1/all';
 
@@ -10,8 +11,7 @@ function CountriesSearchFilter() {
     const [inputSearch, setInputSearch] = useState('');
     const [foundCountries, setFoundCountries] = useState([]);
 
-    const isSearchFullfield = (search, country) => {
-        const searchLength = search.length;
+    const isSearchFullfield = (search, country, searchLength) => {
         if (search.toLowerCase() === country.slice(0, searchLength).toLowerCase()){
             return true;
         }
@@ -19,30 +19,32 @@ function CountriesSearchFilter() {
         return false;
     }
 
-    const createMatchedPart = (search, country) => {
+    const createMatchedPart = (search, country, countryLength) => {
         const result = {};
-        const countryLength = search.length;
 
-        result.match = country.slice(0, countryLength);
+        result.match = search;
         result.otherPart = country.slice(countryLength);
         result.name = country;
 
         return result;
     }
 
-    const searchForCountries = (e) => {
-        const inputSearch = e.target.value;
-        setFoundCountries(countries
+    const findCountries = (inputSearch, inputLength) => {
+        return countries
             .map(country => country.name.common)
-            .filter(country => isSearchFullfield(inputSearch, country))
+            .filter(country => isSearchFullfield(inputSearch, country, inputLength))
             .map(country => {
-                const result = createMatchedPart(inputSearch, country);
+                const result = createMatchedPart(inputSearch, country, inputLength);
                 
                 return result;
-            })
-        );
-        setInputSearch(inputSearch);
+            });
+    }
 
+    const onChangeInputSearchForCountries = (e) => {
+        const inputSearch = e.target.value;
+        const inputLength = inputSearch.length;
+        setFoundCountries(findCountries(inputSearch, inputLength))
+        setInputSearch(inputSearch);
     }
 
     return (
@@ -52,21 +54,23 @@ function CountriesSearchFilter() {
                 <h1 className={styles.title}>Countries Search Filter</h1>
                 <form className={styles.searchForm}>
                     <label htmlFor="countriesSearchInput">Search: </label>
-                    <input type="text" placeholder="Country name..."className={styles.countriesSearchInput} onChange={searchForCountries} value={inputSearch}/>
+                    <input type="text" placeholder="Country name..."className={styles.countriesSearchInput} onChange={onChangeInputSearchForCountries} value={inputSearch}/>
                 </form>
                 <h3 className={styles.titleResults}>Results:</h3>
                 <ul className={styles.countriesList}>
                     {inputSearch && foundCountries.length > 0
                         ?         
                             <>
-                                {foundCountries.map(country => <li key={country.name} className={styles.countryListItem}><span className={styles.match}>{country.match}</span>{country.otherPart}</li>)}
+                                {foundCountries.map(country => <CountryListItem key= {country.name} country={country}/>)}
                             </>
                         :
                             <>
                                 { inputSearch.length > 0 ?
-                                        <li key="noResult" className={styles.countryListItem}>Not Found!</li>
-                                        :
-                                        ''
+                                    <li key="noResult" className={styles.countryListItem}>
+                                        Not Found!
+                                    </li>
+                                    :
+                                    ''
                                 }
                             </>
                         }
