@@ -11,6 +11,7 @@
 .basicRegistrationSection {
     background-color: #32CD32;
     padding: 3rem;
+    height: 90%;
 }
 
 .basicRegistrationForm {
@@ -20,7 +21,10 @@
     padding: 3rem;
     margin: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }
 
 .inputStructure {
@@ -32,12 +36,35 @@
     margin: 1rem auto;
 }
 
+.InvalidMessage {
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    padding: 1rem;
+    width: 60%;
+    margin: 1rem auto;
+    background-color: red;
+    background-color: red;
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 1rem;
+    list-style-type: none;
+}
+
+.InvalidMessage > li {
+    text-align: center;
+}
+
 .inputText {
     background-color: #F0F0F0;
 }
 
 .inputText:focus {
     outline: 3px solid lightskyblue;
+}
+
+.invalidInput {
+    outline: 3px solid red;
 }
 
 .inputSubmit {
@@ -48,8 +75,5 @@
 
 .inputSubmit:disabled {
     background-color: #F0F0F0;
+    color: gray;
 }
-/* 
-.formLabel {
-
-} */
