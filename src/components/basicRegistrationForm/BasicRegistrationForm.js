@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import BackButton from '../BackButton';
 import styles from './BasicRegistrationForm.module.css'
 import InvalidInput from './InvalidInput';
+import SuccessfullRegister from './SuccessfullRegister';
 import { regexTestInput } from './utils';
 
 function BasicRegistrationForm() {
+    const [isRegisterSuccessful, setIsRegisterSuccessful] = useState(false);
     const [registrationData, setRegistrationData] = useState({
         firstName: '',
         lastName: '',
@@ -37,7 +40,7 @@ function BasicRegistrationForm() {
         const emailValidation = regexTestInput(registrationData.email, 'email');
 
         if (firstNameValidation && lastNameValidation && emailValidation){
-            console.log('submit');
+            setIsRegisterSuccessful(true);
         }
     }
 
@@ -58,36 +61,43 @@ function BasicRegistrationForm() {
         }
     }
 
+    const onRegisterComplete = () => {
+        setIsRegisterSuccessful(false);
+    }
+
     return (
         <>
+            <BackButton/>
             <h2 className={styles.title}>Basic Registration Form</h2>  
-            <section className={styles.basicRegistrationSection}>
-                
-                <form className={styles.basicRegistrationForm}>
-                    {(!isInputsValid.firstName || !isInputsValid.lastName || !isInputsValid.email) && <InvalidInput inputsValidData={isInputsValid}/>}
-
-                    <input type="text" placeholder="First Name" value={registrationData.firstName}
-                    onChange={(e) => onChangeInputText(e, 'firstName')}
-                    onBlur={(e) => onBlurInput(e, 'name', 'firstName')}
-                    className={`${styles.inputStructure} ${styles.inputText}`}
-                    />
-                    
-
-                    <input type="text" placeholder="Last Name" value={registrationData.lastName}
-                    onChange={(e) => onChangeInputText(e, 'lastName')} 
-                    onBlur={(e) => onBlurInput(e, 'name', 'lastName')}  
-                    className={`${styles.inputStructure} ${styles.inputText}`}
-                    />
-                    <input type="text" placeholder="Email" value={registrationData.email}
-                    onChange={(e) => onChangeInputText(e, 'email')}
-                    onBlur={(e) => onBlurInput(e, 'email', 'email')}
-                    className={`${styles.inputStructure} ${styles.inputText}` }/>
-                    <input type="submit" className={`${styles.inputStructure} ${styles.inputSubmit}`}
-                    value="Register" onClick={onFormSubmit}  
-                    disabled={!isDisabled() ? true : false }
-                    />
-                </form>
+            
+                <section className={styles.basicRegistrationSection}>
+                    { isRegisterSuccessful ?
+                        <SuccessfullRegister onRegisterComplete={onRegisterComplete}/>
+                    :
+                    <form className={styles.basicRegistrationForm}>
+                        {(!isInputsValid.firstName || !isInputsValid.lastName || !isInputsValid.email) && <InvalidInput inputsValidData={isInputsValid}/>}
+                        <input type="text" placeholder="First Name" value={registrationData.firstName}
+                        onChange={(e) => onChangeInputText(e, 'firstName')}
+                        onBlur={(e) => onBlurInput(e, 'name', 'firstName')}
+                        className={`${styles.inputStructure} ${styles.inputText}`}
+                        />
+                        <input type="text" placeholder="Last Name" value={registrationData.lastName}
+                        onChange={(e) => onChangeInputText(e, 'lastName')} 
+                        onBlur={(e) => onBlurInput(e, 'name', 'lastName')}  
+                        className={`${styles.inputStructure} ${styles.inputText}`}
+                        />
+                        <input type="text" placeholder="Email" value={registrationData.email}
+                        onChange={(e) => onChangeInputText(e, 'email')}
+                        onBlur={(e) => onBlurInput(e, 'email', 'email')}
+                        className={`${styles.inputStructure} ${styles.inputText}` }/>
+                        <input type="submit" className={`${styles.inputStructure} ${styles.inputSubmit}`}
+                        value="Register" onClick={onFormSubmit}  
+                        disabled={!isDisabled() ? true : false }
+                        />
+                    </form>
+                }   
             </section>
+            
         </>
     );
 }

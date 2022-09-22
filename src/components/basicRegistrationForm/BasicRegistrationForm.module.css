@@ -27,6 +27,32 @@
     align-content: center;
 }
 
+.successfullRegisterArticle {
+    border-radius: 10px;
+    background-color: white;
+    width: 50%;
+    padding: 3rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.successfullMessage {
+    color: black;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
+
+.btnRegisterContinue {
+    padding: 1rem 2rem;
+    color: black;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
 .inputStructure {
     border-radius: 10px;
     border: none;

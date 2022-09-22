@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import counterApp from './img/counter-app.png';
 import temperatureControlApp from './img/temperature-control.png';
 import countriesSearchFilter from './img/countries-search-filter.png';
+import basicRegistrationForm from './img/basic-registration-form.png';
 
 function ProjectsBox() {
     return (
@@ -29,7 +30,7 @@ function ProjectsBox() {
                 <Link to="basic-registration-form">
                     <article className={styles.appContainer}>
                         <p className={styles.appTitle}>Basic Registration Form</p>
-                        <img src={countriesSearchFilter} alt="Basic Registration Form" className={styles.appImg}/>
+                        <img src={basicRegistrationForm} alt="Basic Registration Form" className={styles.appImg}/>
                     </article>
                 </Link>
             </section>
