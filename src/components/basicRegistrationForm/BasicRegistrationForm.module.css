@@ -46,6 +46,9 @@
     color: white;
 }
 
+.inputSubmit:disabled {
+    background-color: #F0F0F0;
+}
 /* 
 .formLabel {
 
