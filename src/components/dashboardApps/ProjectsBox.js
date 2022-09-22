@@ -2,6 +2,7 @@ import styles from './Dashboard.module.css';
 import { Link } from 'react-router-dom';
 import counterApp from './img/counter-app.png';
 import temperatureControlApp from './img/temperature-control.png';
+import countriesSearchFilter from './img/countries-search-filter.png';
 
 function ProjectsBox() {
     return (
@@ -22,6 +23,7 @@ function ProjectsBox() {
                 <Link to="countries-search-filter">
                     <article className={styles.appContainer}>
                         <p className={styles.appTitle}>Countries Search Filter</p>
+                        <img src={countriesSearchFilter} alt="countries-search-filter" className={styles.appImg}/>
                     </article>
                 </Link>
             </section>
