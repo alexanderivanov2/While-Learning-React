@@ -1,0 +1,52 @@
+*, *::before, ::after {
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 2rem;
+    color: aliceblue;
+    text-align: center;
+}
+
+.basicRegistrationSection {
+    background-color: #32CD32;
+    padding: 3rem;
+}
+
+.basicRegistrationForm {
+    border-radius: 10px;
+    background-color: white;
+    width: 50%;
+    padding: 3rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inputStructure {
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    padding: 1rem;
+    width: 60%;
+    margin: 1rem auto;
+}
+
+.inputText {
+    background-color: #F0F0F0;
+}
+
+.inputText:focus {
+    outline: 3px solid lightskyblue;
+}
+
+.inputSubmit {
+    letter-spacing: 2px;
+    background-color: #008200;
+    color: white;
+}
+
+/* 
+.formLabel {
+
+} */
