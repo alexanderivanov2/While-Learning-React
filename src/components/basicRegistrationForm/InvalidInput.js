@@ -2,8 +2,8 @@ import styles from './BasicRegistrationForm.module.css';
 
 function InvalidInput ({inputsValidData}) {
     const invalidTexts = {
-        firstName: 'First Name must content only characters and have more than 2 symbols',
-        lastName: 'Last Name must content only characters and have more than 2 symbols',
+        firstName: 'First Name must content only characters and to have more than 2 symbols',
+        lastName: 'Last Name must content only characters and to have more than 2 symbols',
         email: 'Invalid email!',
     }
     

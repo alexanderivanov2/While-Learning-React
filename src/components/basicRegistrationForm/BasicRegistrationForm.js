@@ -23,9 +23,9 @@ function BasicRegistrationForm() {
         return registrationData.firstName && registrationData.lastName && registrationData.email;
     }
 
-    const onChangeInputText = (e, registrationDataKey) => {
+    const onChangeInputText = (e) => {
         const inputValue = e.target.value;
-        console.log(inputValue);
+        const registrationDataKey = e.target.name;
         setRegistrationData(state => ({
             ...state,
             [registrationDataKey]: inputValue,
@@ -35,8 +35,8 @@ function BasicRegistrationForm() {
     const onFormSubmit = (e) => {
         e.preventDefault();
         
-        const firstNameValidation = regexTestInput(registrationData.firstName, 'name');
-        const lastNameValidation = regexTestInput(registrationData.lastName, 'name');
+        const firstNameValidation = regexTestInput(registrationData.firstName, 'firstName');
+        const lastNameValidation = regexTestInput(registrationData.lastName, 'lastName');
         const emailValidation = regexTestInput(registrationData.email, 'email');
 
         if (firstNameValidation && lastNameValidation && emailValidation){
@@ -44,9 +44,10 @@ function BasicRegistrationForm() {
         }
     }
 
-    const onBlurInput = (e, typeInput, inputDataType) => {
+    const onBlurInput = (e) => {
         const result = e.target.value;
-        if (!regexTestInput(result, typeInput)) {
+        const inputDataType = e.target.name;
+        if (!regexTestInput(result, inputDataType)) {
             e.target.classList.add(styles.invalidInput);
             setIsInputsValid(state => ({
                 ...state,
@@ -57,12 +58,18 @@ function BasicRegistrationForm() {
             setIsInputsValid(state => ({
                 ...state,
                 [inputDataType]: true,
-            }))
+            }));
         }
     }
 
     const onRegisterComplete = () => {
         setIsRegisterSuccessful(false);
+        setRegistrationData(state =>({
+            ...state,
+            firstName: '',
+            lastName: '',
+            email: '',
+        }))
     }
 
     return (
@@ -76,19 +83,19 @@ function BasicRegistrationForm() {
                     :
                     <form className={styles.basicRegistrationForm}>
                         {(!isInputsValid.firstName || !isInputsValid.lastName || !isInputsValid.email) && <InvalidInput inputsValidData={isInputsValid}/>}
-                        <input type="text" placeholder="First Name" value={registrationData.firstName}
-                        onChange={(e) => onChangeInputText(e, 'firstName')}
-                        onBlur={(e) => onBlurInput(e, 'name', 'firstName')}
+                        <input type="text" name="firstName" placeholder="First Name" value={registrationData.firstName}
+                        onChange={onChangeInputText}
+                        onBlur={onBlurInput}
                         className={`${styles.inputStructure} ${styles.inputText}`}
                         />
-                        <input type="text" placeholder="Last Name" value={registrationData.lastName}
-                        onChange={(e) => onChangeInputText(e, 'lastName')} 
-                        onBlur={(e) => onBlurInput(e, 'name', 'lastName')}  
+                        <input type="text" name="lastName" placeholder="Last Name" value={registrationData.lastName}
+                        onChange={onChangeInputText} 
+                        onBlur={onBlurInput}  
                         className={`${styles.inputStructure} ${styles.inputText}`}
                         />
-                        <input type="text" placeholder="Email" value={registrationData.email}
-                        onChange={(e) => onChangeInputText(e, 'email')}
-                        onBlur={(e) => onBlurInput(e, 'email', 'email')}
+                        <input type="text" name="email" placeholder="Email" value={registrationData.email}
+                        onChange={onChangeInputText}
+                        onBlur={onBlurInput}
                         className={`${styles.inputStructure} ${styles.inputText}` }/>
                         <input type="submit" className={`${styles.inputStructure} ${styles.inputSubmit}`}
                         value="Register" onClick={onFormSubmit}  
