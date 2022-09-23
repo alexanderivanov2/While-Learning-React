@@ -84,22 +84,23 @@ function BasicRegistrationForm() {
                     <form className={styles.basicRegistrationForm}>
                         {(!isInputsValid.firstName || !isInputsValid.lastName || !isInputsValid.email) && <InvalidInput inputsValidData={isInputsValid}/>}
                         <input type="text" name="firstName" placeholder="First Name" value={registrationData.firstName}
+                        className={`${styles.inputStructure} ${styles.inputText}`}
                         onChange={onChangeInputText}
                         onBlur={onBlurInput}
-                        className={`${styles.inputStructure} ${styles.inputText}`}
                         />
                         <input type="text" name="lastName" placeholder="Last Name" value={registrationData.lastName}
-                        onChange={onChangeInputText} 
-                        onBlur={onBlurInput}  
                         className={`${styles.inputStructure} ${styles.inputText}`}
+                        onChange={onChangeInputText} 
+                        onBlur={onBlurInput}
                         />
                         <input type="text" name="email" placeholder="Email" value={registrationData.email}
+                        className={`${styles.inputStructure} ${styles.inputText}`}
                         onChange={onChangeInputText}
                         onBlur={onBlurInput}
-                        className={`${styles.inputStructure} ${styles.inputText}` }/>
+                        />
                         <input type="submit" className={`${styles.inputStructure} ${styles.inputSubmit}`}
-                        value="Register" onClick={onFormSubmit}  
-                        disabled={!isDisabled() ? true : false }
+                        value="Register" disabled={!isDisabled() ? true : false }
+                        onClick={onFormSubmit}  
                         />
                     </form>
                 }   
