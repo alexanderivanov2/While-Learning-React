@@ -1,0 +1,101 @@
+:root {
+    --background-one: #4ABDAC;
+    --main-color: aliceblue;
+    --vermilion-color: #E7462C;
+    --sunshine-color: #F1B731;
+    --clean-color: #DFDCE3;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.title {
+    color: var(--main-color);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.questionBox {
+    background-color: var(--background-one);
+    padding: 1rem;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.quizTitle {
+    color: var(--main-color);
+}
+
+.startBtn {
+    color: var(--background-one);
+    background-color: var(--sunshine-color);
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 900;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.question {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--main-color);
+    background-color: var(--sunshine-color);
+    width: 80%;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.answers {
+    width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.answer {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: var(--clean-color);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    width: 40%;
+    cursor: pointer;
+}
+
+.selectedAnswer {
+    border: 5px solid var(--sunshine-color);
+}
+
+.wrongAnswer {
+    background-color: var(--vermilion-color);
+    /* animation: blinkingWrong 600ms infinite; */
+}
+
+.rightAnswer {
+    animation: blinkingRight 600ms infinite;
+}
+
+@keyframes blinkingRight {
+    0% {background-color: greenyellow;}
+    25% {background-color: aliceblue;}
+    50% {background-color: greenyellow;}
+    75% {background-color: aliceblue;}
+    100% {background-color: greenyellow;}
+}
+
+/* @keyframes blinkingWrong {
+    0% {background-color: var(--vermilion-color);}
+    25% {background-color: aliceblue;}
+    50% {background-color: var(--vermilion-color);}
+    75% {background-color: aliceblue;}
+    100% {background-color: var(--vermilion-color);}
+} */

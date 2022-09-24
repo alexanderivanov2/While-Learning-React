@@ -33,6 +33,12 @@ function ProjectsBox() {
                         <img src={basicRegistrationForm} alt="Basic Registration Form" className={styles.appImg}/>
                     </article>
                 </Link>
+                <Link to="react-movie-mini-quiz">
+                    <article className={styles.appContainer}>
+                        <p className={styles.appTitle}>React Movie Mini Quiz</p>
+                        <img src={counterApp} alt="React Movie Mini Quiz" className={styles.appImg} />
+                    </article>
+                </Link>
             </section>
         </>
     );

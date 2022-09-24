@@ -5,6 +5,7 @@ import Counter from './components/counter/Counter';
 import TemperatureControl from './components/temperatureControl/TemperatureControl';
 import CountriesSearchFilter from './components/countriesSearchFilter/CountriesSearchFilter';
 import BasicRegistrationForm from './components/basicRegistrationForm/BasicRegistrationForm';
+import ReactMovieMiniQuiz from './components/reactMovieMiniQuizApp/ReactMovieMiniQuiz';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path='/temperature-control' element={<TemperatureControl/>}/>
           <Route path='/countries-search-filter' element={<CountriesSearchFilter/>}/>
           <Route path='/basic-registration-form' element={<BasicRegistrationForm/>}/>
+          <Route path='/react-movie-mini-quiz' element={<ReactMovieMiniQuiz/>}/>
         </Routes>
       </BrowserRouter>
     </div>
