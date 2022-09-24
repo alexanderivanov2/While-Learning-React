@@ -18,11 +18,25 @@
 
 .questionBox {
     background-color: var(--background-one);
-    padding: 1rem;
+    padding: 5rem 3rem;
     text-align: center;
     width: 80%;
-    margin: 0 auto;
+    margin: 1rem auto;
     border-radius: 5px;
+}
+
+.controllBox {
+    padding: 3rem;
+}
+
+.controllBox .quizTitle {
+    margin: 0;
+    padding: 0;
+}
+
+.quizResult {
+    font-size: 3rem;
+    color: var(--sunshine-color)
 }
 
 .quizTitle {
@@ -32,6 +46,7 @@
 .startBtn {
     color: var(--background-one);
     background-color: var(--sunshine-color);
+    margin: 1rem;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-weight: 900;
@@ -54,7 +69,8 @@
 
 .answers {
     width: 80%;
-    margin: 1rem auto;
+    margin: 2rem auto;
+    padding: 2rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -77,7 +93,6 @@
 
 .wrongAnswer {
     background-color: var(--vermilion-color);
-    /* animation: blinkingWrong 600ms infinite; */
 }
 
 .rightAnswer {
@@ -91,11 +106,3 @@
     75% {background-color: aliceblue;}
     100% {background-color: greenyellow;}
 }
-
-/* @keyframes blinkingWrong {
-    0% {background-color: var(--vermilion-color);}
-    25% {background-color: aliceblue;}
-    50% {background-color: var(--vermilion-color);}
-    75% {background-color: aliceblue;}
-    100% {background-color: var(--vermilion-color);}
-} */

@@ -4,6 +4,7 @@ import counterApp from './img/counter-app.png';
 import temperatureControlApp from './img/temperature-control.png';
 import countriesSearchFilter from './img/countries-search-filter.png';
 import basicRegistrationForm from './img/basic-registration-form.png';
+import movieMiniQuiz from './img/react-movie-mini-quiz.png';
 
 function ProjectsBox() {
     return (
@@ -36,7 +37,7 @@ function ProjectsBox() {
                 <Link to="react-movie-mini-quiz">
                     <article className={styles.appContainer}>
                         <p className={styles.appTitle}>React Movie Mini Quiz</p>
-                        <img src={counterApp} alt="React Movie Mini Quiz" className={styles.appImg} />
+                        <img src={movieMiniQuiz} alt="React Movie Mini Quiz" className={styles.appImg} />
                     </article>
                 </Link>
             </section>

@@ -2,6 +2,7 @@ import styles from './ReactMovieMiniQuiz.module.css';
 import jsonQuestions from './questions.json';
 import { useEffect, useState } from 'react';
 import Question from './Question';
+import BackButton from '../BackButton';
 
 function ReactMovieMiniQuiz() {
     const [questions, setQuestions] = useState({
@@ -65,6 +66,7 @@ function ReactMovieMiniQuiz() {
 
     return (
         <>
+            <BackButton/>
             <h2 className={styles.title}>Movie Mini Quiz</h2>
             <section className={styles.questionBox}>
                 {quizStart
@@ -81,13 +83,13 @@ function ReactMovieMiniQuiz() {
                             {
                                 quizEnd 
                                     ?
-                                    <article>
+                                    <article className={styles.controllBox}>
                                         <h2 className={styles.quizTitle}>Movie Mini Quiz</h2>
-                                        <p>Quiz result: {quizResult}/{questions.questionsLength + 1}</p>
+                                        <p className={styles.quizResult}>Quiz result: {quizResult}/{questions.questionsLength + 1}</p>
                                         <button className={styles.startBtn} onClick={endQuiz}>New Quiz</button>
                                     </article>
                                     :
-                                    <article>
+                                    <article className={styles.controllBox}>
                                         <h2 className={styles.quizTitle}>Movie Mini Quiz</h2>
                                         <button className={styles.startBtn} onClick={(e) => setQuizStart(true)}>Start Quiz</button>
                                     </article>
