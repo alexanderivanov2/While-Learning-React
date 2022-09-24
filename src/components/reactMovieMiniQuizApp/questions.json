@@ -1,0 +1,58 @@
+{
+    "questions": [
+        {
+            "question": "The head of what kind of animal is front-and-center in an infamous scene from The Godfather?",
+            "answers": [
+                {"answer": "Horse", "isCorrect": true},
+                {"answer": "Dog", "isCorrect": false},
+                {"answer": "Cat", "isCorrect": false},
+                {"answer": "Chicken", "isCorrect": false}
+            ]
+        },
+        {
+            "question": "In what 1976 thriller does Robert De Niro famously say 'You talkin' to me?'",
+            "answers": [
+                {"answer": "Scarface", "isCorrect": false},
+                {"answer": "Death Wish", "isCorrect": false},
+                {"answer": "Taxi Driver", "isCorrect": true},
+                {"answer": "Heat", "isCorrect": false}
+            ]
+        },
+        {
+            "question": "In Risky Business, what song did Tom Cruise famously lip-sync to in his underwear?",
+            "answers": [
+                {"answer": "I Love Rock 'n' Roll", "isCorrect": false},
+                {"answer": "I Can't Dance", "isCorrect": false},
+                {"answer": "I Want to Break Free", "isCorrect": false},
+                {"answer": "Old Time Rock and Roll", "isCorrect": true}
+            ]
+        },
+        {
+            "question": "Joaquin Phoenix received his first Oscar nomination for playing Roman emperor Commodus in what 2000 Oscar-winning epic?",
+            "answers": [
+                {"answer": "Gladiator", "isCorrect": true},
+                {"answer": "Rome", "isCorrect": false},
+                {"answer": "Spartacus", "isCorrect": false},
+                {"answer": "Troy", "isCorrect": false}
+            ]
+        },
+        {
+            "question": "If you watch the Marvel movies in chronological order, which movie would you watch first?",
+            "answers": [
+                {"answer": "Iron Man", "isCorrect": false},
+                {"answer": "Captain America: The First Avenger ", "isCorrect": true},
+                {"answer": "Doctor Strange", "isCorrect": false},
+                {"answer": "Captain Marvel", "isCorrect": false}
+            ]
+        },
+        {
+            "question": "What\\’s the name of the planet Obi-Wan Kenobi and Anakin Skywalker duel on in Star Wars Episode III: Revenge of the Sith?",
+            "answers": [
+                {"answer": "Hoth", "isCorrect": false},
+                {"answer": "Yavin", "isCorrect": false},
+                {"answer": "Mustafar", "isCorrect": true},
+                {"answer": "Tatooine", "isCorrect": false}
+            ]
+        }
+    ]
+}
