@@ -12,7 +12,7 @@ function ReactMovieMiniQuiz() {
     const [questionNumber, setQuestionNumber] = useState(0);
     const [quizStart, setQuizStart] = useState(false);
     const [quizEnd, setQuizEnd] = useState(false);
-    const [checkedAnswer, setCheckedAnswer] = useState('');
+    const [selectedAnswer, setSelectedAnswer] = useState('');
     const [rightAnswer, setRightAnswer] = useState('');
     const [quizResult, setQuizResult] = useState(0);
 
@@ -24,8 +24,9 @@ function ReactMovieMiniQuiz() {
         });
     }, []);
 
-    const getRightAnswer = () => {
+    const getTheRightAnswer = () => {
         let result = '';
+
         questions.questions[questionNumber].answers.forEach(x => {
             if (x.isCorrect) {
                 result = x.answer;
@@ -35,17 +36,15 @@ function ReactMovieMiniQuiz() {
         return result;
     }
 
-    const checkAnswer = (answer) => {
-        const correctAnswer = getRightAnswer();
-        setQuizResult(state => answer == correctAnswer ? state + 1 : state);
-        setCheckedAnswer(answer);
+    const checkTheSelectedAnswer = (answer) => {
+        const correctAnswer = getTheRightAnswer();
+        setQuizResult(state => answer === correctAnswer ? state + 1 : state);
+        setSelectedAnswer(answer);
         setRightAnswer(correctAnswer);
     }
 
-    const onClickAnswer = (e) => {
-        e.target.classList.add(styles.selectedAnswer);
-
-        checkAnswer(e.target.textContent);
+    const onSelectTheAnswer = (e) => {
+        checkTheSelectedAnswer(e.target.textContent);
 
         setTimeout(() => {
             if (questions.questionsLength === questionNumber) {
@@ -57,10 +56,12 @@ function ReactMovieMiniQuiz() {
         }, 1000);
     } 
 
-    const endQuiz = () => {
+    const resetQuiz = () => {
         setQuizEnd(false);
         setQuestionNumber(0);
         setQuizResult(0);
+        setRightAnswer('');
+        setSelectedAnswer('');
         setQuizStart(true);
     }
 
@@ -72,23 +73,23 @@ function ReactMovieMiniQuiz() {
                 {quizStart
                     ?
                         <>
-                            <Question question={questions.questions[questionNumber]}
-                            checkedAnswer={checkedAnswer}
-                            rightAnswer={rightAnswer}
-                            onClickAnswer={onClickAnswer}
+                            <Question 
+                                question={questions.questions[questionNumber]}
+                                selectedAnswer={selectedAnswer}
+                                rightAnswer={rightAnswer}
+                                onSelectTheAnswer={onSelectTheAnswer}
                             />
                         </>
                     :
                         <>
-                            {
-                                quizEnd 
-                                    ?
+                            {quizEnd 
+                                ?
                                     <article className={styles.controllBox}>
                                         <h2 className={styles.quizTitle}>Movie Mini Quiz</h2>
                                         <p className={styles.quizResult}>Quiz result: {quizResult}/{questions.questionsLength + 1}</p>
-                                        <button className={styles.startBtn} onClick={endQuiz}>New Quiz</button>
+                                        <button className={styles.startBtn} onClick={resetQuiz}>New Quiz</button>
                                     </article>
-                                    :
+                                :
                                     <article className={styles.controllBox}>
                                         <h2 className={styles.quizTitle}>Movie Mini Quiz</h2>
                                         <button className={styles.startBtn} onClick={(e) => setQuizStart(true)}>Start Quiz</button>

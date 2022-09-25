@@ -1,22 +1,22 @@
 import styles from './ReactMovieMiniQuiz.module.css';
 
-function Answer({answer, onClickAnswer, checkedAnswer, rightAnswer}) {
+function Answer({answer, onSelectTheAnswer, selectedAnswer, rightAnswer}) {
     const classesAnswer = [styles.answer];
 
-    if (checkedAnswer === answer) {
+    if (selectedAnswer === answer) {
         classesAnswer.push(styles.selectedAnswer);
     }
 
-    if (checkedAnswer !== rightAnswer && checkedAnswer === answer) {
+    if (selectedAnswer !== rightAnswer && selectedAnswer === answer) {
         classesAnswer.push(styles.wrongAnswer);
     }
 
-    if (answer == rightAnswer) {
+    if (answer === rightAnswer) {
         classesAnswer.push(styles.rightAnswer);
     }
     return (
         <>
-            <p onClick={onClickAnswer} className={classesAnswer.join(' ')} answer={answer}>{answer}</p>  
+            <p onClick={onSelectTheAnswer} className={classesAnswer.join(' ')} answer={answer}>{answer}</p>  
         </>
     );
 }
