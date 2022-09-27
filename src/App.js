@@ -6,11 +6,13 @@ import TemperatureControl from './components/temperatureControl/TemperatureContr
 import CountriesSearchFilter from './components/countriesSearchFilter/CountriesSearchFilter';
 import BasicRegistrationForm from './components/basicRegistrationForm/BasicRegistrationForm';
 import ReactMovieMiniQuiz from './components/reactMovieMiniQuizApp/ReactMovieMiniQuiz';
+import ReactNavbar from './components/reactNavbar/ReactNavbar';
 
 
 function App() {
   return (
     <div className="App">
+      <ReactNavbar/>
       <h1 className='title'>While Learing React</h1>
       <BrowserRouter>
         <Routes>
