@@ -73,19 +73,19 @@ function ReactNavbar() {
                         {navbarSectionsActive.beginner &&
                         <NavbarSection section="beginner" onOutHoverNavbarSection={onOutHoverNavbarSection}/>}
                     </div>
-                    <div className={styles.navbarSection} id="intermediate" onMouseOver={onHover} onMouseLeave={onOutHoverNavbarTitle}>
+                    <div className={`${styles.navbarSection} ${styles.middle}`} id="intermediate" onMouseOver={onHover} onMouseLeave={onOutHoverNavbarTitle}>
                         <h3 className={styles.navSectionName} >
                             Intermediate
                         </h3>
                         {navbarSectionsActive.intermediate &&
                         <NavbarSection section="beginner" onOutHoverNavbarSection={onOutHoverNavbarSection}/>}
                     </div>
-                    <div className={styles.navbarSection} id="hard" onMouseOver={onHover} onMouseLeave={onOutHoverNavbarTitle}>
+                    <div className={`${styles.navbarSection} ${styles.end}`} id="hard" onMouseOver={onHover} onMouseLeave={onOutHoverNavbarTitle}>
                         <h3 className={styles.navSectionName} >
                             Hard
                         </h3>    
                         {navbarSectionsActive.hard &&
-                        <NavbarSection section="beginner" onOutHoverNavbarSection={onOutHoverNavbarSection}/>}
+                        <NavbarSection section="beginner" arrow="end" onOutHoverNavbarSection={onOutHoverNavbarSection}/>}
                     </div>
                 </div>
                 

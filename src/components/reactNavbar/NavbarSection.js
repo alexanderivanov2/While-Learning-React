@@ -13,7 +13,7 @@ const sectionLinks = {
 
 function NavbarSection({
     onOutHoverNavbarSection,
-    section: sectionName
+    section: sectionName,
 }) {
     sectionLinks[sectionName].map(x => console.log(x));
     return (

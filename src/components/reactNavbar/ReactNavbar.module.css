@@ -45,11 +45,11 @@
 }
 
 .choosenSection {
-    width: 200%;
+    width: 200px;
     position: absolute;
-    left: -50%;
+    left: -50px;
     border-radius: 5px;
-    margin-top: 2rem;
+    margin-top: 2.1rem;
     padding: 1rem 0.5rem;
     background-color: aqua;
     display: flex;
@@ -63,11 +63,43 @@
 }
 
 .navbarSection {
+
+    text-align: center;
     padding: 0.5rem;
     position: relative;
 }
 
 .navbarSection:hover::before {
+    content: '';
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: -35px;
+    left: 0%;
+    transform: translate(0%);
+    color: aqua;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 35px solid aqua;
+    z-index: 300;
+}
+
+.middle:hover::before {
+    left: 15%;
+}
+
+.middle .choosenSection {
+    left:-25%;
+}
+
+.end:hover::before {
+    left: -25%;
+}
+
+.end .choosenSection {
+    left: -110%;
+}
+/* .navbarSection:hover::before {
     content: '';
     position: absolute;
     bottom: -45%;
@@ -89,7 +121,7 @@
     background: greenyellow;
     padding-top: 1rem;
     transform: skew(0deg, -6deg);
-}
+} */
 
 .navbarLink {
     text-align: center;
