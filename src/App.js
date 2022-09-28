@@ -12,9 +12,10 @@ import ReactNavbar from './components/reactNavbar/ReactNavbar';
 function App() {
   return (
     <div className="App">
-      <ReactNavbar/>
-      <h1 className='title'>While Learing React</h1>
       <BrowserRouter>
+        <ReactNavbar/>
+        <h1 className='title'>While Learing React</h1>
+
         <Routes>
           <Route path='/' element={<Dashboard/>}/>
           <Route path='/counter' element={<Counter/>}/>

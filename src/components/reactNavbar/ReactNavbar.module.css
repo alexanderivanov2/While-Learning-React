@@ -2,25 +2,104 @@
     box-sizing: border-box;
 }
 
-
 .navigation {
     width: 100%;
     height: 10%;
     margin: 0;
     background-color: aliceblue;
-    padding: 1rem;
+    padding: 1rem 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: sticky;
+    top:0;
+    z-index: 10;
 }
 
 .titleAndLogo {
-    width: 100%;
+    width: 30%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 1rem;
+    cursor: default;
 }
 
 .reactLogo {
     width: 10%;
     height: 100%;
+}
 
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    width: 70%;
+    height: 100%;
+}
+
+.navSectionName {
+    cursor: pointer;
+}
+
+.choosenSection {
+    width: 200%;
+    position: absolute;
+    left: -50%;
+    border-radius: 5px;
+    margin-top: 2rem;
+    padding: 1rem 0.5rem;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.navSectionName {
+    padding: 0;
+    margin: 0;
+}
+
+.navbarSection {
+    padding: 0.5rem;
+    position: relative;
+}
+
+.navbarSection:hover::before {
+    content: '';
+    position: absolute;
+    bottom: -45%;
+    left: 20%;
+    height: 45%;
+    width: 30%;
+    background: greenyellow;
+    padding-top: 1rem;
+    transform: skew(0deg, 6deg);
+}
+
+.navbarSection:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -45%;
+    right: 20%;
+    height: 45%;
+    width: 30%;
+    background: greenyellow;
+    padding-top: 1rem;
+    transform: skew(0deg, -6deg);
+}
+
+.navbarLink {
+    text-align: center;
+    padding: 0.5rem;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.navbarLink:hover {
+    background-color: aliceblue;
+    border-radius: 5px;
 }
