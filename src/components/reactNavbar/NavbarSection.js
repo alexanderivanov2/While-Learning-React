@@ -15,11 +15,12 @@ function NavbarSection({
     onOutHoverNavbarSection,
     section: sectionName,
 }) {
-    sectionLinks[sectionName].map(x => console.log(x));
     return (
         <>
             <div className={styles.choosenSection} id="additionalSection"  onMouseLeave={onOutHoverNavbarSection}>
-                {sectionLinks[sectionName].map(x => <Link to={`${x.to}`} onClick={onOutHoverNavbarSection} className={styles.navbarLink}>{x.name}</Link>)}
+                {sectionLinks[sectionName].map(x => <Link to={`${x.to}`} onClick={onOutHoverNavbarSection} className={styles.navbarLink} key={x.name}>
+                    {x.name}
+                    </Link>)}
             </div>
         </>
     )

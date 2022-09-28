@@ -24,39 +24,36 @@ function ReactNavbar() {
     });
 
     const onHover = (e) => {
-        e.preventDefault();
-        console.dir(e.currentTarget.id);
+        console.log("onHover");
         const hoverSection = e.currentTarget.id;
-
-        setHoveredNavSections(state => ({
-            ...state,
-            [hoverSection]: true,
-        }));
-        setNavbarSectionsActive(state => ({
-            ...state,
-            [hoverSection]: true,
-        }));
+        if (!navbarSectionsActive[hoverSection]) {
+            console.log('onHover re-render');
+            setNavbarSectionsActive(state => ({
+                ...state,
+                [hoverSection]: true,
+            }));
+            setHoveredNavSections(state => ({
+                ...state,
+                [hoverSection]: true,
+            }));
+        }
     };
 
-    const onOutHoverNavbarTitle = (e) => {
+    const onOutHoverNavbarSectionTitle = (e) => {
         const clientX = e.clientX;
         const clientY = e.clientY;
         const offsetWidth = e.currentTarget.offsetWidth;
         const offsetTop = e.currentTarget.offsetTop
         const offsetLeft = e.currentTarget.offsetLeft;
-        const hoverSection = e.currentTarget.id;
-        
+
         if (clientX <= offsetLeft || clientX >= offsetLeft + offsetWidth || clientY <= offsetTop) {
-            setHoveredNavSections(state => ({
-                ...state,
-                [hoverSection]: false
-            }));
+            setHoveredNavSections(resetState);
             setNavbarSectionsActive(resetState);
         }
     };
 
     const onOutHoverNavbarSection = (e) => {
-        setTimeout(() => setNavbarSectionsActive(resetState), 100)  
+        setNavbarSectionsActive(resetState);
     }
 
     return (
@@ -68,19 +65,19 @@ function ReactNavbar() {
                 </div>
                 
                 <div className={styles.navbar} >
-                    <div className={styles.navbarSection} id="beginner" onMouseOver={onHover} onMouseLeave={onOutHoverNavbarTitle}>
+                    <div className={styles.navbarSection} id="beginner" onMouseOver={onHover} onMouseLeave={onOutHoverNavbarSectionTitle}>
                         <h3 className={styles.navSectionName}>Beginner</h3>
                         {navbarSectionsActive.beginner &&
                         <NavbarSection section="beginner" onOutHoverNavbarSection={onOutHoverNavbarSection}/>}
                     </div>
-                    <div className={`${styles.navbarSection} ${styles.middle}`} id="intermediate" onMouseOver={onHover} onMouseLeave={onOutHoverNavbarTitle}>
+                    <div className={`${styles.navbarSection} ${styles.middle}`} id="intermediate" onMouseOver={onHover}  onMouseLeave={onOutHoverNavbarSectionTitle}>
                         <h3 className={styles.navSectionName} >
                             Intermediate
                         </h3>
                         {navbarSectionsActive.intermediate &&
                         <NavbarSection section="beginner" onOutHoverNavbarSection={onOutHoverNavbarSection}/>}
                     </div>
-                    <div className={`${styles.navbarSection} ${styles.end}`} id="hard" onMouseOver={onHover} onMouseLeave={onOutHoverNavbarTitle}>
+                    <div className={`${styles.navbarSection} ${styles.end}`} id="hard" onMouseOver={onHover} onMouseLeave={onOutHoverNavbarSectionTitle}>
                         <h3 className={styles.navSectionName} >
                             Hard
                         </h3>    
