@@ -29,12 +29,34 @@
   display: flex;
   gap: 5%;
 }
-.todoListAppPage__app__addAndFilterWrapper__create {
+.todoListAppPage__app__addAndFilterWrapperCreate {
+  width: 100%;
+  position: relative;
+}
+.todoListAppPage__app__addAndFilterWrapperCreate__create {
   padding: 0.5rem;
-  width: 60%;
+  width: 100%;
   border: none;
   border-radius: 5px;
   font-size: 1.2rem;
+}
+.todoListAppPage__app__addAndFilterWrapperCreate__add {
+  position: absolute;
+  width: 15%;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: white;
+  background: green;
+  z-index: 15;
+  right: 0%;
+  bottom: 1px;
+  top: 0;
+  border: none;
+  outline: none;
+  background-color: white;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
 }
 .todoListAppPage__app__addAndFilterWrapper__filter {
   width: 35%;

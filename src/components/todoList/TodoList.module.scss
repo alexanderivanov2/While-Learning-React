@@ -34,15 +34,41 @@
         &__addAndFilterWrapper {
             display: flex;
             gap: 5%;
+            
+            &Create {
 
+                width: 100%;
+                position: relative;
 
-            &__create {
-                padding: 0.5rem;
-                width: 60%;
-                border: none;
-                border-radius: 5px;
-                font-size: 1.2rem;
+                &__create {
+                    padding: 0.5rem;
+                    width: 100%;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 1.2rem;
+                }
+                
+                &__add{
+                    position: absolute;
+                    width: 15%;
+                    font-size: 1.2rem;
+                    font-weight: 900;
+                    color: white;
+                    background: green;
+                    z-index: 15;
+                    right: 0%;
+                    bottom: 1px;
+                    top: 0;
+                    border: none;
+                    outline: none;
+                    background-color: white;
+                    border-bottom-right-radius: 5px;
+                    border-top-right-radius: 5px;
+                    overflow: hidden;
+                }
             }
+
+            
 
             &__filter {
                 width: 35%;
