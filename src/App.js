@@ -7,6 +7,7 @@ import CountriesSearchFilter from './components/countriesSearchFilter/CountriesS
 import BasicRegistrationForm from './components/basicRegistrationForm/BasicRegistrationForm';
 import ReactMovieMiniQuiz from './components/reactMovieMiniQuizApp/ReactMovieMiniQuiz';
 import ReactNavbar from './components/reactNavbar/ReactNavbar';
+import TodoList from './components/todoList/TodoList';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path='/countries-search-filter' element={<CountriesSearchFilter/>}/>
           <Route path='/basic-registration-form' element={<BasicRegistrationForm/>}/>
           <Route path='/react-movie-mini-quiz' element={<ReactMovieMiniQuiz/>}/>
+          <Route path='/todo-list' element={<TodoList/>}/>
         </Routes>
       </BrowserRouter>
     </div>

@@ -40,6 +40,12 @@ function ProjectsBox() {
                         <img src={movieMiniQuiz} alt="React Movie Mini Quiz" className={styles.appImg} />
                     </article>
                 </Link>
+                <Link to='todo-list'>
+                    <article className={styles.appContainer}>
+                        <p className={styles.appTitle}>Todo List</p>
+                        <img src='' alt="todo list"/>
+                    </article>
+                </Link>
             </section>
         </>
     );
