@@ -1,0 +1,83 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.todoListAppPage {
+  background-image: linear-gradient(to left top, #e04d01, #e65501, #ec5d00, #f16500, #f76d00, #f77203, #f87807, #f87d0c, #f38114, #ed851c, #e88822, #e38b29);
+  height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+}
+.todoListAppPage__title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+  padding-top: 1rem;
+}
+.todoListAppPage__app {
+  padding-top: 2rem;
+  width: 50%;
+  margin: 0 auto;
+}
+.todoListAppPage__app__addAndFilterWrapper {
+  display: flex;
+  gap: 5%;
+}
+.todoListAppPage__app__addAndFilterWrapper__create {
+  padding: 0.5rem;
+  width: 60%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.todoListAppPage__app__addAndFilterWrapper__filter {
+  width: 35%;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+}
+.todoListAppPage__app .todoList {
+  margin-top: 1rem;
+}
+.todoListAppPage__app .todoItem {
+  background-color: white;
+  list-style-type: none;
+  display: flex;
+  margin-bottom: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+.todoListAppPage__app .todoItem__name {
+  width: 90%;
+  padding: 0.5rem;
+  font-weight: 700;
+}
+.todoListAppPage__app .todoItem__name-completed {
+  text-decoration: line-through;
+  color: grey;
+}
+.todoListAppPage__app .todoItem__complete {
+  width: 10%;
+  background-color: green;
+  color: white;
+  font-weight: 900;
+  font-size: 1rem;
+  border: none;
+}
+.todoListAppPage__app .todoItem__delete {
+  width: 10%;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 900;
+  background-color: red;
+}/*# sourceMappingURL=TodoList.module.css.map */
