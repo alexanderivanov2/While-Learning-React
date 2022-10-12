@@ -45,18 +45,22 @@
   width: 15%;
   font-size: 1.2rem;
   font-weight: 900;
-  color: white;
-  background: green;
+  color: #e04d01;
   z-index: 15;
   right: 0%;
   bottom: 1px;
   top: 0;
-  border: none;
+  border: 3px solid #e04d01;
   outline: none;
   background-color: white;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
+  border-radius: 5px;
   overflow: hidden;
+  cursor: pointer;
+}
+.todoListAppPage__app__addAndFilterWrapperCreate__add:hover {
+  background-color: green;
+  color: white;
+  border-color: white;
 }
 .todoListAppPage__app__addAndFilterWrapper__filter {
   width: 35%;

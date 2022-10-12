@@ -1,69 +1,59 @@
 import { useState, useEffect } from 'react';
 
-import styles from './TodoList.module.scss';
-import BackButton from "../BackButton";
-import { filterResult, getTodos, TodosSetInLS } from './utils';
 import TodoItem from './TodoItem';
+import BackButton from "../BackButton";
+import { addingTodo, completingTodo, deletingTodo, filterResult, getTodos, TodosSetInLS } from './utils';
+import styles from './TodoList.module.scss';
+
 
 function TodoList() {
-    const [todos, setTodos] = useState([]);
-    const [filterTodos, setFilterTodos] = useState('All');
+    const [filterCriteria, setFilterCriteria] = useState('All');
     const [filtredTodos, setFilteredTodos] = useState([]);
     const [todoInput, setTodoInput] = useState('');
     const [isChange, setIsChange] = useState(true);
 
     useEffect(() => {
         const result = getTodos();
-        const filteredResult = filterResult(result, filterTodos);
+        const filteredResult = filterResult(result, filterCriteria);
+
         if (isChange) {
-            setTodos(result);
             setFilteredTodos(filteredResult);
             setIsChange(false);
         }
         
     }, [isChange]);
 
+    const onInputChange = (e) => {
+        setTodoInput(e.target.value);
+    }
+
     const onChangeFilterCriteria = (e) => {
-        const filterValue = e.target.value;
-        setFilterTodos(filterValue);
+        const filterOption = e.target.value;
+        setFilterCriteria(filterOption);
         setIsChange(true);
     }
 
     const addTodo = () => {
         if (todoInput.length > 2) {
-            setTodos(state => {
-                const newTodos = [...state, {todo: todoInput, isCompleted: false}];
-                TodosSetInLS(newTodos);
-                return newTodos;
-            });
+            addingTodo(todoInput);
             setTodoInput('');
             setIsChange(true);
         }
-
     }
 
-    const completeTodo = (itemData, i) => {
-        itemData.isCompleted = true;
-        setTodos(state => {
-            const result = [...state];
-            result[i] = itemData;
-            TodosSetInLS(result)
-            return result;
-        });
+    const completeTodo = (todoData, i) => {
+        completingTodo(todoData, i, filterCriteria);
         setIsChange(true);
     }
 
     const deleteTodo = (i) =>  {
-        setTodos(state => {
-            const result = state.slice(0, i).concat(state.slice(i + 1));
-            TodosSetInLS(result);
-        });
-        setIsChange(true);
-    }
+        if (filterCriteria === 'All') {
+            deletingTodo(i);
+        } else {
+            deletingTodo(i, filtredTodos[i].todo);
+        }
 
-    const onInputChange = (e) => {
-        console.log(e.target.value);
-        setTodoInput(e.target.value);
+        setIsChange(true);
     }
 
     return (
@@ -77,19 +67,18 @@ function TodoList() {
                             <input className={styles.todoListAppPage__app__addAndFilterWrapperCreate__create} id='createTodo' value={todoInput}
                             onChange={(e) => onInputChange(e)} type='text' placeholder='Todo...'/>
                             <button className={styles.todoListAppPage__app__addAndFilterWrapperCreate__add} onClick={addTodo}>+</button>
-
                         </div>
                         
-                        <select className={styles.todoListAppPage__app__addAndFilterWrapper__filter} id='filterTodo' value={filterTodos.filter} onChange={onChangeFilterCriteria}>
+                        <select className={styles.todoListAppPage__app__addAndFilterWrapper__filter} id='filterTodo' value={filterCriteria.filter} onChange={onChangeFilterCriteria}>
                             <option value='All'>All</option>
                             <option value='Completed'>Completed</option>
                             <option value='Uncompleted'>Uncompleted</option>
                         </select>
                     </div>
                     <ul className={styles.todoList}>
-                        {filtredTodos.map((todo, i) => <TodoItem key={todo.todo} itemData={todo} itemIndex={i} completeTodo={completeTodo} deleteTodo={deleteTodo}></TodoItem>)}
+                        {filtredTodos.map((todo, i) => <TodoItem key={`${todo.todo}-${i}`} itemData={todo} itemIndex={i}
+                        completeTodo={completeTodo} deleteTodo={deleteTodo}></TodoItem>)}
                     </ul>
-
                 </article>
             </section>
         </>

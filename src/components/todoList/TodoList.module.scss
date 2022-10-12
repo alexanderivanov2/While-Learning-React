@@ -4,10 +4,6 @@
     padding: 0;
 }
 
-@mixin createBorder {
-    border: 3px solid white;
-}
-
 .todoListAppPage {
     background-image: linear-gradient(to left top, #e04d01, #e65501, #ec5d00, #f16500, #f76d00, #f77203, #f87807, #f87d0c, #f38114, #ed851c, #e88822, #e38b29);
     height: 100vh;
@@ -26,7 +22,6 @@
     }
 
     &__app {
-        // @include createBorder();
         padding-top: 2rem;
         width: 50%;
         margin: 0 auto;
@@ -53,22 +48,25 @@
                     width: 15%;
                     font-size: 1.2rem;
                     font-weight: 900;
-                    color: white;
-                    background: green;
+                    color: #e04d01;
                     z-index: 15;
                     right: 0%;
                     bottom: 1px;
                     top: 0;
-                    border: none;
+                    border: 3px solid #e04d01;
                     outline: none;
                     background-color: white;
-                    border-bottom-right-radius: 5px;
-                    border-top-right-radius: 5px;
+                    border-radius: 5px;
                     overflow: hidden;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: green;
+                        color: white;
+                        border-color: white;
+                    }
                 }
             }
-
-            
 
             &__filter {
                 width: 35%;
@@ -98,7 +96,7 @@
 
                 &-completed {
                     text-decoration: line-through;
-                    color: grey;
+                    color: green;
                 }
             }
             
