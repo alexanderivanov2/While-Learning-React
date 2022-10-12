@@ -39,19 +39,20 @@ function TodoList() {
 
     const addTodo = () => {
         const checkForDuplicate = checkForDuplicateInTodos(todoInput);
-        console.log(checkForDuplicate);
-        if (todoInput.length > 2 && !checkForDuplicate) {
-            addingTodo(todoInput);
-            setTodoInput('');
-            setIsDuplicateTodo({
-                is: false,
-                msg: '',
-            });
-        } else {
-            setIsDuplicateTodo({
-                is: true,
-                msg: `${todoInput}`
-            });
+        if (todoInput.length > 2) {
+            if (!checkForDuplicate) {
+                addingTodo(todoInput);
+                setTodoInput('');
+                setIsDuplicateTodo({
+                    is: false,
+                    msg: '',
+                });
+            } else {
+                setIsDuplicateTodo({
+                    is: true,
+                    msg: `${todoInput}`
+                });
+            } 
         }
 
         setIsChange(true);
@@ -92,7 +93,7 @@ function TodoList() {
                         </select>
                     </div>
 
-                    {isDuplicateTodo.is && <h2 className={styles.todoListAppPage__app__warrningMSG}>Todo with name: {isDuplicateTodo.msg} is already Exist!</h2>}
+                    {isDuplicateTodo.is && <h2 className={styles.todoListAppPage__app__warningMSG}>Todo with name: {isDuplicateTodo.msg} is already Exist!</h2>}
                     <ul className={styles.todoList}>
                         {filtredTodos.map((todo, i) => <TodoItem key={`${todo.todo}-${i}`} itemData={todo} itemIndex={i}
                         completeTodo={completeTodo} deleteTodo={deleteTodo}></TodoItem>)}
