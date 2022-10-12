@@ -8,6 +8,7 @@ const sectionLinks = {
         {name: "Countries Search Filter App", to: "/countries-search-filter"},
         {name: "Basic Registration Form", to: "/basic-registration-form"},
         {name: "React Movie Mini Quiz", to: "/react-movie-mini-quiz"},
+        {name: "Todo List", to: "/todo-list"},
     ]
 };
 
