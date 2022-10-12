@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import TodoItem from './TodoItem';
 import BackButton from "../BackButton";
-import { addingTodo, completingTodo, deletingTodo, filterResult, getTodos, TodosSetInLS } from './utils';
+import { addingTodo, checkForDuplicateInTodos, completingTodo, deletingTodo, filterResult, getTodos, TodosSetInLS } from './utils';
 import styles from './TodoList.module.scss';
 
 
@@ -11,6 +11,10 @@ function TodoList() {
     const [filtredTodos, setFilteredTodos] = useState([]);
     const [todoInput, setTodoInput] = useState('');
     const [isChange, setIsChange] = useState(true);
+    const [isDuplicateTodo, setIsDuplicateTodo] = useState({
+        is: false,
+        msg: '',
+    });
 
     useEffect(() => {
         const result = getTodos();
@@ -34,11 +38,23 @@ function TodoList() {
     }
 
     const addTodo = () => {
-        if (todoInput.length > 2) {
+        const checkForDuplicate = checkForDuplicateInTodos(todoInput);
+        console.log(checkForDuplicate);
+        if (todoInput.length > 2 && !checkForDuplicate) {
             addingTodo(todoInput);
             setTodoInput('');
-            setIsChange(true);
+            setIsDuplicateTodo({
+                is: false,
+                msg: '',
+            });
+        } else {
+            setIsDuplicateTodo({
+                is: true,
+                msg: `${todoInput}`
+            });
         }
+
+        setIsChange(true);
     }
 
     const completeTodo = (todoData, i) => {
@@ -75,6 +91,8 @@ function TodoList() {
                             <option value='Uncompleted'>Uncompleted</option>
                         </select>
                     </div>
+
+                    {isDuplicateTodo.is && <h2 className={styles.todoListAppPage__app__warrningMSG}>Todo with name: {isDuplicateTodo.msg} is already Exist!</h2>}
                     <ul className={styles.todoList}>
                         {filtredTodos.map((todo, i) => <TodoItem key={`${todo.todo}-${i}`} itemData={todo} itemIndex={i}
                         completeTodo={completeTodo} deleteTodo={deleteTodo}></TodoItem>)}

@@ -26,6 +26,10 @@
         width: 50%;
         margin: 0 auto;
 
+        &__warrningMSG {
+            color: red;
+        }
+
         &__addAndFilterWrapper {
             display: flex;
             gap: 5%;

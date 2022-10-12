@@ -13,10 +13,11 @@ function TodoItem ({
                 <p className={todoItemClassList.join(' ')}>
                     {itemData.todo}
                 </p>
-                {!itemData.isCompleted && <button className={styles.todoItem__complete} onClick={completeTodo.bind(this, itemData, itemIndex)}>
-                    &#10004;
-                </button>}
-                
+                {!itemData.isCompleted
+                    && <button className={styles.todoItem__complete} onClick={completeTodo.bind(this, itemData, itemIndex)}>
+                        &#10004;
+                    </button>
+                }
                 <button className={styles.todoItem__delete} onClick={deleteTodo.bind(this, itemIndex)}>
                     &#10006;
                 </button>

@@ -6,6 +6,10 @@ const saveTodosInLocalStorage = (todos) => {
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+const checkForDuplicateInTodos = (todoName) => {
+    return getTodos()?.find(todo => todo.todo === todoName);
+}
+
 const filterResult = (todos, filter) => {
     if (filter == 'All') {
         return todos;
@@ -25,8 +29,13 @@ const addingTodo = (newTodo) => {
 }
 
 const completingTodo = (todoData, i, filteringCriteria) => {
-    todoData.isCompleted = true;
     const todos = getTodos();
+
+    if (filteringCriteria !== 'All') {
+        i = todos.findIndex(todo => todo.todo === todoData.todo);
+    }
+
+    todoData.isCompleted = true;
     todos[i] = todoData;
     saveTodosInLocalStorage(todos);
 }
@@ -49,4 +58,5 @@ export {
     addingTodo,
     completingTodo,
     deletingTodo,
+    checkForDuplicateInTodos,
 }
