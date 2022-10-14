@@ -8,6 +8,7 @@ import BasicRegistrationForm from './components/basicRegistrationForm/BasicRegis
 import ReactMovieMiniQuiz from './components/reactMovieMiniQuizApp/ReactMovieMiniQuiz';
 import ReactNavbar from './components/reactNavbar/ReactNavbar';
 import TodoList from './components/todoList/TodoList';
+import Calclucator from './components/calculator/Calculator';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='/basic-registration-form' element={<BasicRegistrationForm/>}/>
           <Route path='/react-movie-mini-quiz' element={<ReactMovieMiniQuiz/>}/>
           <Route path='/todo-list' element={<TodoList/>}/>
+          <Route path='/calclulator' element={<Calclucator/>}/>
         </Routes>
       </BrowserRouter>
     </div>

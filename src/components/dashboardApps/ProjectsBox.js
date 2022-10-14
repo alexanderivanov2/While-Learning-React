@@ -47,6 +47,12 @@ function ProjectsBox() {
                         <img src={todoApp} alt="todo list" className={styles.appImg}/>
                     </article>
                 </Link>
+                <Link to='calclulator'>
+                    <article className={styles.appContainer}>
+                        <p className={styles.appTitle}>Calculator</p>
+                        <img src={todoApp} alt="Calculator" className={styles.appImg}/>
+                    </article>
+                </Link>
             </section>
         </>
     );
