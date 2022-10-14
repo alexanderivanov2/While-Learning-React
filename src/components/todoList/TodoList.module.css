@@ -25,6 +25,9 @@
   width: 50%;
   margin: 0 auto;
 }
+.todoListAppPage__app__warningMSG {
+  color: red;
+}
 .todoListAppPage__app__addAndFilterWrapper {
   display: flex;
   gap: 5%;
@@ -87,7 +90,7 @@
 }
 .todoListAppPage__app .todoItem__name-completed {
   text-decoration: line-through;
-  color: grey;
+  color: green;
 }
 .todoListAppPage__app .todoItem__complete {
   width: 10%;
