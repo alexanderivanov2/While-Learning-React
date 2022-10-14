@@ -1,0 +1,49 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin borders {
+    border: 3px solid lightgrey;
+}
+.calculatorAppSection {
+    @include borders();
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.calculatorApp {
+    @include borders();
+    margin: 2rem auto;
+    width: 400px;
+
+    &__resultScreen {
+        background-color: black;
+        color: white;
+        padding: 1rem;
+        font-size: 2rem;
+        text-align: end;
+    }
+
+    &__controls {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: grey;
+        &__btn {
+            background-color: darkgrey;
+            border: 3px solid lightgray;
+            padding: 1rem;
+            font-size: 2rem;
+            width: 25%;
+            cursor: pointer;
+
+            &:hover {
+                background-color: white;
+                color: orange;
+            }
+        }
+    }
+}
