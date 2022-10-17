@@ -40,28 +40,24 @@ function Calclucator() {
     }
 
     const calculateResult = () => {
-        let result;
-        if (operator) {
-            result = calculateController(firstNumber, secondNumber, operator);
-        } else {
-            result = calculateController(firstNumber, secondNumber, operator);
-        }
+        const result = calculateController(firstNumber, secondNumber, operator);
         console.log(result);
         resetStates(result);
     }
 
     const onPressedOperatorBtn = (btnOperator) => {
-        if (isSecondNumber && secondNumber !== '') {
+        if (isSecondNumber && secondNumber) {
           calculateResult(btnOperator);  
         } else {
             setIsSecondNumber(true);
             setPoint(false);
         }
+
         setOperator(btnOperator);
     }
 
     const onPressedPoint = () => {
-        if (isSecondNumber && secondNumber !== '' && !point) {
+        if (isSecondNumber && secondNumber && !point) {
             setSecondNumber(state =>  state + '.');        
             setPoint(true);   
         } else if (!isSecondNumber && !point){
@@ -85,10 +81,8 @@ function Calclucator() {
             onPressedPoint();
         } else if (data.btnType === 'operator') {
             onPressedOperatorBtn(data.operator);
-        } else if (data.btnType === 'control') {
-            if (data.typeControl === 'equal' && operator && firstNumber && secondNumber) {
-                calculateResult();
-            } 
+        } else if (data.btnType === 'control' && operator && firstNumber && secondNumber) {
+            calculateResult(); 
         }
     }
 
@@ -99,19 +93,23 @@ function Calclucator() {
             <section className={styles.calculatorAppSection}>
                 <article className={styles.calculatorApp}>
                     <p className={styles.calculatorApp__resultScreen}>{
-                        secondNumber === '' ? firstNumber || 0 : secondNumber
-                        }</p>
+                        secondNumber === '' ? firstNumber || 0 : secondNumber}
+                    </p>
                     <div className={styles.calculatorApp__controls}>
                         {typeButtonsInOrder.map(btn => {
                             if(btn.btnType === 'number'){
-                                return <NumberBtn number={btn.number} data={btn} onClickBtn={onClickBtn} key={btn.number}/>;
+                                return <NumberBtn number={btn.number} data={btn}
+                                onClickBtn={onClickBtn} key={btn.number}/>;
                             } else if (btn.btnType === 'operator') {
-                                return <OperatorBtn operator={btn.operatorSymbol} data={btn} onClickBtn={onClickBtn}  key={btn.operator}/>;
+                                return <OperatorBtn operator={btn.operatorSymbol} data={btn}
+                                onClickBtn={onClickBtn}  key={btn.operator}/>;
                             } else if (btn.btnType === 'control') {
-                                return <ControlBtn control={btn.controlSymbol} data={btn} onClickBtn={onClickBtn} key={btn.typeControl}/>
+                                return <ControlBtn control={btn.controlSymbol} data={btn}
+                                onClickBtn={onClickBtn} key={btn.typeControl}/>
                             }
                         })}
-                        <button className={`${styles.calculatorApp__controls__resetBtn} ${styles.calculatorApp__controls__btn}` } onClick={() => resetStates('', true)}>RESET</button>
+                        <button className={`${styles.calculatorApp__controls__resetBtn} ${styles.calculatorApp__controls__btn}`}
+                        onClick={() => resetStates('', true)}>RESET</button>
                     </div>
                 </article>
             </section>
