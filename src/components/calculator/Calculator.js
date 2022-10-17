@@ -45,12 +45,10 @@ function Calclucator() {
         setPoint(false);
         setIsSecondNumber(full ? false : true);
         setOperator('');
-        // setOperator(state => full ? '' : state);
     }
 
     const calculateResult = () => {
         const result = calculateController(firstNumber, secondNumber, operator);
-        console.log(result);
         resetStates(result);
     }
 
