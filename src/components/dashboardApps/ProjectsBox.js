@@ -6,6 +6,7 @@ import countriesSearchFilter from './img/countries-search-filter.png';
 import basicRegistrationForm from './img/basic-registration-form.png';
 import movieMiniQuiz from './img/react-movie-mini-quiz.png';
 import todoApp from './img/todo-app.png';
+import calculatorApp from './img/calclulator.png';
 
 function ProjectsBox() {
     return (
@@ -47,10 +48,10 @@ function ProjectsBox() {
                         <img src={todoApp} alt="todo list" className={styles.appImg}/>
                     </article>
                 </Link>
-                <Link to='calclulator'>
+                <Link to='calculator'>
                     <article className={styles.appContainer}>
                         <p className={styles.appTitle}>Calculator</p>
-                        <img src={todoApp} alt="Calculator" className={styles.appImg}/>
+                        <img src={calculatorApp} alt="Calculator" className={styles.appImg}/>
                     </article>
                 </Link>
             </section>
