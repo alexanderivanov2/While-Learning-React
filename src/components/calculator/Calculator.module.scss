@@ -7,6 +7,13 @@
 @mixin borders {
     border: 3px solid lightgrey;
 }
+
+.appTitle {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
 .calculatorAppSection {
     @include borders();
     width: 80%;
@@ -32,6 +39,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         background-color: grey;
+
         &__btn {
             background-color: darkgrey;
             border: 3px solid lightgray;
@@ -44,6 +52,10 @@
                 background-color: white;
                 color: orange;
             }
+        }
+
+        &__resetBtn {
+            width: 100%;
         }
     }
 }
