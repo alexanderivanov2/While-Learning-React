@@ -60,29 +60,29 @@ function Calclucator() {
         setOperator(btnOperator);
     }
 
-    const onPressedNumberBtn = (number) => {
-        if (number === '.' && !point) {
-            if (isSecondNumber && secondNumber !== '') {
-                setSecondNumber(state =>  state + number);
-                setPoint(true);
-            } else if (!isSecondNumber){
-                setFirstNumber(state => state ? state + number : '0.');
-                setPoint(true);
-            }
+    const onPressedPoint = () => {
+        if (isSecondNumber && secondNumber !== '' && !point) {
+            setSecondNumber(state =>  state + '.');        
+            setPoint(true);   
+        } else if (!isSecondNumber && !point){
+            setFirstNumber(state => state ? state + '.' : '0.'); 
+            setPoint(true);
+        }  
+    }
 
-        } else if (number !== '.') {
-            if (isSecondNumber) {
-                setSecondNumber(state => state + number);
-            } else {
-                setFirstNumber(state => state + number);
-            }
+    const onPressedNumberBtn = (number) => {
+        if (isSecondNumber) {
+            setSecondNumber(state => state + number);
+        } else {
+            setFirstNumber(state => state + number);
         }
     }
     
     const onClickBtn = (e, data) => {
-        // console.log(data);
-        if (data.btnType === 'number') {
+        if (data.btnType === 'number' && data.number !== '.') {
             onPressedNumberBtn(data.number);
+        }else if (data.btnType === 'number' && data.number === '.'){
+            onPressedPoint();
         } else if (data.btnType === 'operator') {
             onPressedOperatorBtn(data.operator);
         } else if (data.btnType === 'control') {
