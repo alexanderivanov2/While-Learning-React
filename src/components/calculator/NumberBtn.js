@@ -6,7 +6,7 @@ function NumberBtn({
     onClickBtn
 }) {
     return (
-        <button className={styles.calculatorApp__controls__btn} onClick={(e) => onClickBtn(e, data)}>{number}</button>
+        <button className={styles.calculatorApp__controls__btn} onClick={() => onClickBtn(data)}>{number}</button>
     );
 }
 

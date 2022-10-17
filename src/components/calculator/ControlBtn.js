@@ -4,7 +4,7 @@ function ControlBtn({control,
     data,
     onClickBtn}) {
     return (
-        <button className={styles.calculatorApp__controls__btn} onClick={(e) => onClickBtn(e, data)}>{control}</button>
+        <button className={styles.calculatorApp__controls__btn} onClick={() => onClickBtn(data)}>{control}</button>
     );
 }
 

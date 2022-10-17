@@ -18,11 +18,11 @@ const typeButtonsInOrder = [
     {btnType: 'number', number: 1},
     {btnType: 'number', number: 2},
     {btnType: 'number', number: 3},
-    {btnType: 'operator', operator: 'plus', operatorSymbol:'+'},
+    {btnType: 'operator', operator: 'addition', operatorSymbol:'+'},
     {btnType: 'number', number: '.'},
     {btnType: 'number', number: 0},
     {btnType: 'control', typeControl: 'equal', controlSymbol:'='},
-    {btnType: 'operator', operator: 'minus', operatorSymbol:'-'},
+    {btnType: 'operator', operator: 'subtract', operatorSymbol:'-'},
 ];
 
 function Calclucator() {
@@ -74,7 +74,7 @@ function Calclucator() {
         }
     }
     
-    const onClickBtn = (e, data) => {
+    const onClickBtn = (data) => {
         if (data.btnType === 'number' && data.number !== '.') {
             onPressedNumberBtn(data.number);
         }else if (data.btnType === 'number' && data.number === '.'){
