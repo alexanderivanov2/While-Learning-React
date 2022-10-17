@@ -25,6 +25,13 @@ const typeButtonsInOrder = [
     {btnType: 'operator', operator: 'subtract', operatorSymbol:'-'},
 ];
 
+const operatorSymbols = {
+    addition: '+',
+    subtract: '-',
+    multiply: '*',
+    divide: '/'
+}
+
 function Calclucator() {
     const [firstNumber, setFirstNumber] = useState('');
     const [secondNumber, setSecondNumber] = useState('');
@@ -37,6 +44,8 @@ function Calclucator() {
         setSecondNumber('');     
         setPoint(false);
         setIsSecondNumber(full ? false : true);
+        setOperator('');
+        // setOperator(state => full ? '' : state);
     }
 
     const calculateResult = () => {
@@ -67,9 +76,9 @@ function Calclucator() {
     }
 
     const onPressedNumberBtn = (number) => {
-        if (isSecondNumber) {
+        if (isSecondNumber && operator) {
             setSecondNumber(state => state + number);
-        } else {
+        } else if (!isSecondNumber){
             setFirstNumber(state => state + number);
         }
     }
@@ -86,14 +95,18 @@ function Calclucator() {
         }
     }
 
+    const screen = `${firstNumber || 0}
+            ${firstNumber && operator && operatorSymbols[operator]}
+            ${secondNumber}
+            `
+
     return (
         <>
             <BackButton/>
             <h2 className={styles.appTitle}>Calculator</h2>
             <section className={styles.calculatorAppSection}>
                 <article className={styles.calculatorApp}>
-                    <p className={styles.calculatorApp__resultScreen}>{
-                        secondNumber === '' ? firstNumber || 0 : secondNumber}
+                    <p className={styles.calculatorApp__resultScreen}>{screen}
                     </p>
                     <div className={styles.calculatorApp__controls}>
                         {typeButtonsInOrder.map(btn => {
