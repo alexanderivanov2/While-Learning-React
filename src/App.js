@@ -26,7 +26,7 @@ function App() {
           <Route path='/basic-registration-form' element={<BasicRegistrationForm/>}/>
           <Route path='/react-movie-mini-quiz' element={<ReactMovieMiniQuiz/>}/>
           <Route path='/todo-list' element={<TodoList/>}/>
-          <Route path='/calclulator' element={<Calclucator/>}/>
+          <Route path='/calculator' element={<Calclucator/>}/>
         </Routes>
       </BrowserRouter>
     </div>
