@@ -9,6 +9,7 @@ const sectionLinks = {
         {name: "Basic Registration Form", to: "/basic-registration-form"},
         {name: "React Movie Mini Quiz", to: "/react-movie-mini-quiz"},
         {name: "Todo List", to: "/todo-list"},
+        {name: "Calculator", to: "/calculator"}
     ]
 };
 
