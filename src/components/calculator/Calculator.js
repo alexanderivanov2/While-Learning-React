@@ -54,13 +54,13 @@ function Calclucator() {
 
     const onPressedOperatorBtn = (btnOperator) => {
         if (isSecondNumber && secondNumber) {
-          calculateResult(btnOperator);  
-        } else {
+            calculateResult(btnOperator); 
+            setOperator(btnOperator); 
+        } else if (firstNumber){
             setIsSecondNumber(true);
             setPoint(false);
+            setOperator(btnOperator);
         }
-
-        setOperator(btnOperator);
     }
 
     const onPressedPoint = () => {
