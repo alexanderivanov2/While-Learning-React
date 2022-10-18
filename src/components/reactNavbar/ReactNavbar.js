@@ -24,10 +24,8 @@ function ReactNavbar() {
     });
 
     const onHover = (e) => {
-        console.log("onHover");
         const hoverSection = e.currentTarget.id;
         if (!navbarSectionsActive[hoverSection]) {
-            console.log('onHover re-render');
             setNavbarSectionsActive(state => ({
                 ...state,
                 [hoverSection]: true,
