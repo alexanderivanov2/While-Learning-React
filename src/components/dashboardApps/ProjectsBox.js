@@ -54,6 +54,13 @@ function ProjectsBox() {
                         <img src={calculatorApp} alt="Calculator" className={styles.appImg}/>
                     </article>
                 </Link>
+                <Link to='simple-contact-list'>
+                    <article className={styles.appContainer}>
+                        <p className={styles.appTitle}>Simple Contact List</p>
+                        <img src={calculatorApp} alt="Simple Contact List App image" className={styles.appImg}/>
+                    </article>
+                </Link>
+                
             </section>
         </>
     );
