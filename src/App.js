@@ -9,6 +9,7 @@ import ReactMovieMiniQuiz from './components/reactMovieMiniQuizApp/ReactMovieMin
 import ReactNavbar from './components/reactNavbar/ReactNavbar';
 import TodoList from './components/todoList/TodoList';
 import Calclucator from './components/calculator/Calculator';
+import SimpleContactList from './components/simpleContactList/SimpleContactList';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path='/react-movie-mini-quiz' element={<ReactMovieMiniQuiz/>}/>
           <Route path='/todo-list' element={<TodoList/>}/>
           <Route path='/calculator' element={<Calclucator/>}/>
+          <Route path='/simple-contact-list' element={<SimpleContactList/>}/>
         </Routes>
       </BrowserRouter>
     </div>
