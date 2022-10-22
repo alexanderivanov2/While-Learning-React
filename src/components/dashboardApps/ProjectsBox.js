@@ -7,6 +7,7 @@ import basicRegistrationForm from './img/basic-registration-form.png';
 import movieMiniQuiz from './img/react-movie-mini-quiz.png';
 import todoApp from './img/todo-app.png';
 import calculatorApp from './img/calclulator.png';
+import simpleContactListIMG from './img/simple-contact-list.png';
 
 function ProjectsBox() {
     return (
@@ -57,7 +58,7 @@ function ProjectsBox() {
                 <Link to='simple-contact-list'>
                     <article className={styles.appContainer}>
                         <p className={styles.appTitle}>Simple Contact List</p>
-                        <img src={calculatorApp} alt="Simple Contact List App image" className={styles.appImg}/>
+                        <img src={simpleContactListIMG} alt="Simple Contact List App image" className={styles.appImg}/>
                     </article>
                 </Link>
                 

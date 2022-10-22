@@ -28,7 +28,6 @@
 
 .contact {
     width: 700px;
-    // border: 1px solid green;
     margin: 1rem auto;
     border-radius: 10px;
     display: flex;
@@ -36,6 +35,10 @@
     justify-content: flex-start;
     padding: 2rem 0 2rem 2rem;
     background-color: lightblue;
+
+    &:hover {
+        cursor: pointer;
+    }
 
     &__imageWrapper {
         margin-right: 2rem;
