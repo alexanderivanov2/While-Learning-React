@@ -1,6 +1,8 @@
 # While-Learning-React
 Building Apps While Learning React.
+
 App List:
+
 1. Counter App
   Summary: Simple React App which increment/decrements count on-screen when buttons are clicked
 using React State.
